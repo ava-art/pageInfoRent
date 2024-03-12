@@ -17,7 +17,7 @@ const stopwatch = useStopwatch(beetwenSec);
 </script>
 <template>
   <div :class="{ innerTime: inner }">
-    <div>
+    <div class="timer-font">
       <div class="mb-2">
         <span v-if="stopwatch.days.value > 0">{{ stopwatch.days }}</span>
         <span v-if="stopwatch.days.value > 0"> день </span>
@@ -48,5 +48,8 @@ const stopwatch = useStopwatch(beetwenSec);
   font-size: 18px;
   line-height: 16px;
   text-align: center;
+}
+.timer-font{
+  font-family: 'Timer', 'Arial';
 }
 </style>

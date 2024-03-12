@@ -2,13 +2,14 @@
 import { useInfoStore } from "@/assets/stores/InfoStore";
 
 const infoStore = useInfoStore()
-console.log();
+
 </script>
 
 <template>
   <div class="mt-6 px-4">
-    <h2 v-if="!infoStore.review.defaultStar || !infoStore.review.star" >Как вам поездка?</h2>
-    <h2 v-else>Спасибо за оценку!</h2>
+    <hr>
+    <h2 class=" text-center mt-2" v-if="!infoStore.review.defaultStar || !infoStore.review.star" >Как вам поездка?</h2>
+    <h2 class=" text-center mt-2" v-else>Спасибо за оценку!</h2>
     <div class="flex items-center justify-between p-4 px-6">
       <div
         @click="infoStore.onClickStar(0)"
@@ -40,7 +41,7 @@ console.log();
     <div v-if="!infoStore.review.defaultComment">
 
       <textarea
-      v-if="infoStore.review.star > 0"
+      
       @input="(e) => infoStore.review.comment = e.target.value"
       class="border w-full min-h-20 p-2"
       placeholder="Как мы можем стать лучше?"

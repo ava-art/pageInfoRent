@@ -10,7 +10,6 @@ const infoStore = useInfoStore();
 
 infoStore.sendPosition();
 infoStore.getInfo();
-
 </script>
 
 <template>
@@ -21,19 +20,21 @@ infoStore.getInfo();
   </div>
 
   <div class="wrap-info mt-6" v-else>
-    <div class="flex gap-4 m-3 border border-black p-2 rounded-xl">
-      <img
-        class="max-w-28 border-gray-700 rounded-lg"
-        :src="'https://app.welotochka.ru/' + infoStore.itemRent.element.image"
-        alt=""
-      />
-      <div class="item-content">
-        <div class="item-title">{{ infoStore.itemRent.element.name }}</div>
-        <div class="item-text flex flex-wrap">
-          <span>Рама - {{ infoStore.itemRent.element.rama }};</span>
-          <span>Колеса - {{ infoStore.itemRent.element.koleso }}”;</span>
+    <div class="flex gap-4 border items-center justify-between border-black p-2 rounded-xl">
+    <div class=" w-4/12 max-h-28 flex items-center justify-center">
+        <img
+          class=" max-w-24  border-gray-700 rounded-lg"
+          :src="'https://app.welotochka.ru/' + infoStore.itemRent.element.image"
+          alt=""
+        />
+      </div>
+      <div class="item-content  w-8/12">
+        <div class="item-title">{{ infoStore.itemRent.element.name_en }}</div>
+        <div class="item-text flex  flex-wrap">
+          <span class=" mr-2"> Колеса - {{ infoStore.itemRent.element.koleso }}” </span>
+          <span> Рама - {{ infoStore.itemRent.element.rama }} </span>
           <span
-            >Трансмиссия - {{ infoStore.itemRent.element.transmissia }}</span
+            > Трансмиссия - {{ infoStore.itemRent.element.transmissia }}</span
           >
         </div>
         <div class="qr-code">
@@ -42,7 +43,7 @@ infoStore.getInfo();
             src="https://welotochka.ru/assets/templates/welotochka/image/new-pic/qr-code.png"
             alt=""
           />
-          <div class="qr-code-number">{{ infoStore.itemRent.element.qr }}</div>
+          <div class="qr-code-number">{{ new Intl.NumberFormat('ru').format(infoStore.itemRent.element.qr) }}</div>
         </div>
       </div>
     </div>
