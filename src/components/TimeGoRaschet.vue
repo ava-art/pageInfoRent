@@ -49,7 +49,7 @@ const stopwatch = useStopwatch(beetwenSec);
   line-height: 16px;
   text-align: center;
 }
-.timer-font{
+/* .timer-font{
   font-family: 'Timer', 'Arial';
-}
+} */
 </style>
