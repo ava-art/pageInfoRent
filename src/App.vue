@@ -66,7 +66,10 @@ infoStore.getInfo();
             <div class="text-sm">ИТОГО:</div>
             <span class="block leading-4 font-bold"
               >{{
-                infoStore.itemRent.money_full_drive -
+                ((infoStore.itemRent.money_full_drive -
+                infoStore.itemRent.money_pay_start) < 0)
+                ? 0
+                : infoStore.itemRent.money_full_drive -
                 infoStore.itemRent.money_pay_start
               }}
               <span class="text-sm">₽</span></span

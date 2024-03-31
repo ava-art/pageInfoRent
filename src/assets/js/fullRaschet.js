@@ -14,15 +14,15 @@ const fullRaschet = (element) => {
 
     if (name == "Велосипеды" || name == "Ролики") {
         if (elementName.includes("Тандем")) {
-            if (min <= 65) return 500;
-            if (min > 65) {
-                return Math.ceil((min - 65) / 30) * 250 + 500;
+            if (min <= 70) return 500;
+            if (min > 70) {
+                return Math.ceil((min - 70) / 30) * 250 + 500;
             }
         }
 
-        if (min <= 65) return 200;
-        if (min > 65) {
-            const summ = Math.ceil((min - 65) / 30) * 100 + 200;
+        if (min <= 70) return 300;
+        if (min > 70) {
+            const summ = Math.ceil((min - 70) / 30) * 100 + 300;
             const time18 = Date.parse(`${element.date_start} 18:05:00`);
             const time24 = Date.parse(`${element.date_start} 23:59:59`);
 
@@ -77,7 +77,7 @@ const fullRaschet = (element) => {
         if (min > 123 && min <= 133) return 2900;
         if (min > 133 && min <= 143) return 3000;
     } else if (name == "Защита") {
-        return 100;
+        return 0;
     }
 };
 export default fullRaschet;
